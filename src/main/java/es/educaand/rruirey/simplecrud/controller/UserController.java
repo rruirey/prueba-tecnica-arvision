@@ -45,7 +45,6 @@ public class UserController {
   @Operation(summary = "Create a new user")
   @PostMapping("/user")
   public User create(@RequestBody User user) {
-    // save provided user and return it.
     return repository.save(user);
   }
 
