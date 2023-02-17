@@ -1,6 +1,7 @@
 package es.educaand.rruirey.simplecrud.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,7 +24,7 @@ public class User {
   @Column(nullable = false)
   private String surname;
 
-  // primitive types cannot be null
+  @Min(0)
   private int age;
 
 }
