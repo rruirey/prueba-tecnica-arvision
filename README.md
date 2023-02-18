@@ -32,7 +32,23 @@ Create the **Docker** containers using **Docker Compose**.
 docker-compose -f stack/stack.yml up -d
 ```
 
-Run the project
+Before running the project, you need to create the database. To do this, you can create it through **Adminer** (
+accessible through http://localhost:8181) or you can execute the following command:
+
+The name of the docker container is usually **stack-db-1**. You can check the name of the container with the following
+command:
+
+```bash
+docker ps
+```
+
+Once you have the name of the container, you can execute the following command:
+
+```bash
+docker exec -it <docker image name> psql -U postgres -c "CREATE DATABASE simplecrud"
+```
+
+Then, run the project
 
 ```bash
  java -jar target/simple-crud-0.0.1-SNAPSHOT.jar
